@@ -48,17 +48,13 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
              </div>
 	   </div>
 
-       <div class="content_wrapper">
-	   <?php the_content(); ?>
-	</div>	<!-- /.content_wrapper ends -->
-
 	<?php endwhile;?>
 	<?php endif; ?>
 
 <?php if (is_category()) { ?>
 <section class="content_wrapper">
         <article <?php post_class(); ?>>
-        <section  class="col-left tips">
+        <section  class="entry tips">
 
 
     <?php //if (have_posts()) : 
@@ -97,11 +93,11 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 <?php } else { ?>
 	<section class="content_wrapper">
             <article <?php post_class(); ?>>
-            		<section  class="col-left tips">
+            		<section  class="entry tips">
 
                    <?php query_posts(array(
                     'post_type'=> 'tips',
-        	  	    'posts_per_page' => 10,
+        	  	    'posts_per_page' => 1000,
         	  	    'orderby' => 'post_date',
         	  	    'order' => 'DESC',
         	      	 ));

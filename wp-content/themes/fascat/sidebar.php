@@ -89,6 +89,14 @@ if ( isset( $woo_options['woo_layout'] ) && ( $woo_options['woo_layout'] != 'lay
 				powermeter purchase</p>
 			</a>
 		</div>  <!-- free month ends -->
+
+		<div class="free_month">
+			<a href= "http://fascat.wpengine.com/wp-content/uploads/2015/01/flyer.png" rel=”lightbox”>
+				<h1>FREE SHIPPING</h1>
+				<p>in the Continental U.S.<br />
+				with every purchase</p>
+			</a>
+		</div>  <!-- free month ends -->
 	
 	
 	</aside><!-- /#sidebar -->

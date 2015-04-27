@@ -31,33 +31,55 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 		<article <?php post_class(); ?>>
 
-	           <header>
-                      <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
-			   <div class="header_txt">
-                          <h2>Camps</h2>
-		            <p><?php the_title(); ?></p>
-	                    <a class="button small_txt" href="<?php echo $cfs->get('sign_up_url');?>">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
-
-	                 </div>
+	   <header>
+        <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
+          <div class="header_txt">
+            <h2><?php the_title();?></h2>
+		          <p><?php echo $cfs->get('camp_subtitle'); ?></p>
+	             <a class="button small_txt" href="<?php echo $cfs->get('sign_up_url');?>">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
+	      </div>
 			 </div>
-	             </header>
+	   </header>
 
 	                
     			<section class="content_wrapper">
+            <section class="entry fix">
         <?php global $post;?>
             <ul id="submenu">
-              <li<?php if('fascat-custom-coachingtraining-camps' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo($campUrl = get_site_url('camps'));?>/fascat-custom-coachingtraining-camps">Custom 1 on 1 weekend</a></li>
-              <li<?php if('jeremy-powers-cyclocross' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $campUrl?>/jeremy-powers-cyclocross/">Jeremy Powers Cyclocross</a></li>
-              <li<?php if('mountain-bike-skills-clinic-with-myles-rockwell' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $campUrl?>/mountain-bike-skills-clinic-with-myles-rockwell">MTB Skill Clinic</a></li>
-              <li<?php if('junior-training-group-with-fascat-coaching' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $campUrl?>/junior-training-group-with-fascat-coaching">Junior Training Group</a></li>
-              <li<?php if('fascat-cycleops-power-training-camp-with-timmy-duggan' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $campUrl?>/fascat-cycleops-power-training-camp-with-timmy-duggan">Cycleops Power Camp</a></li>
-            </ul>
+
+
+                      <?php 
+                      $temp = get_the_ID();
+
+                  query_posts(array(
+                  'post_type'=> 'camps',
+                  'posts_per_page' => 5,
+                  'orderby' => 'post_date',
+                  'order' => 'DESC',
+                   ));
+                  ?>
+                   <?php if (have_posts()) : while (have_posts()) : the_post(); 
+              $i++; //add 1 to the total count
+              $class = ( $temp == get_the_ID() ) ? 'active' : '';
+                   ?>
+
+                    <li class= "<?php echo $class ?>">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                      </a>
+                    </li>
+                    
+                      <?php endwhile;?>
+            <?php endif; wp_reset_query();?>
+
+          </ul>
         <div class="clear"></div>
-	                <section class="entry fix">
-	                	<?php the_content(); ?>                    
+        <section>
+	         <?php the_content(); ?>                    
 			   </section>
 
 		<div class="clearfix"> </div>
+    </section>
 
 			</section><!-- .content_wrapper -->
             </article><!-- .post -->
@@ -75,6 +97,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
             ?>
                
             <div class="content_wrapper">
+              <section class="entry fix">
 		<h2>Camps</h2>
 
            <?php if (have_posts()) : while (have_posts()) : the_post(); 
@@ -85,10 +108,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
               <div class="featured_image">
                 <a href="<?php the_permalink(); ?>">
                   <?php the_post_thumbnail(); ?>
-                  <div class="overlay">
                   <h5><?php the_title();?></h5>
-                  </div>
-                  <div class="magnifier"> </div>
                 </a>
               </div>	<!-- featured_image ends -->
             
@@ -96,6 +116,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		<?php endif; ?>
 
 		<div class="clearfix"> </div>
+  </section>
 
 	     </div>	<!-- .content_wrapper ends -->
 

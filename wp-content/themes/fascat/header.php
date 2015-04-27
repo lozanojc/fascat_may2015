@@ -49,7 +49,7 @@ h1{color:#fff !important}
 			<?php
 				if ( class_exists( 'woocommerce' ) ) {
 					echo '<ul class="nav wc-nav">';
-					// woocommerce_cart_link();
+					woocommerce_cart_link();
 					echo '<li class="checkout"><a href="'.esc_url($woocommerce->cart->get_checkout_url()).'">'.__('Checkout','fascat').'</a></li>';
 					echo get_search_form();
 					echo '</ul>';

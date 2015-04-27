@@ -218,7 +218,7 @@ INDEX
 
   #wrapper {
     position: relative;
-    max-width: 1400px;
+    max-width: 100%;
     border-right: 1px solid #CCC;
   }
 
@@ -258,8 +258,6 @@ INDEX
 }
   #header #navigation ul.nav > li a {
     font-weight: bold;
-    border-top: 1px solid #111111;
-    border-bottom: 1px solid #000000;
     line-height: 54px;
     max-width: 60px;
 	background:url(../images/nav-menu-icon-sprite.png) no-repeat;
@@ -904,8 +902,8 @@ INDEX
   .woocommerce_tabs ul.tabs,
   .woocommerce-tabs ul.tabs {
     margin-bottom: 0;
-    margin-left: 2.618em;
   }
+  
   .woocommerce_tabs ul.tabs li,
   .woocommerce-tabs ul.tabs li {
     width: auto;

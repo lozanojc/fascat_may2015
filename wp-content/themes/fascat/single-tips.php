@@ -39,26 +39,31 @@ global $woo_options;
 				<section class="entry fix">
 		
 					
-					<?php the_content(); ?>   
-					
-					Share: <?php echo do_shortcode ('[shareaholic app="share_buttons" id="eafb5fbf838369f426a096cc148b76f8"]'); ?>                 
+					<?php the_content(); ?>
 				</section>
 
-				<div class="tips-sidebar" style="display: block; position: relative; left: 10px;">
+				<div class="tips-sidebar" style="display: block; position: relative;">
+					<div class="fb-likebox">
+						<div class="fb-page" data-href="https://www.facebook.com/pages/FasCat-Coaching/31628608122?fref=ts" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/FasCat-Coaching/31628608122?fref=ts"><a href="https://www.facebook.com/pages/FasCat-Coaching/31628608122?fref=ts">FasCat Coaching</a></blockquote></div></div>
+					</div>
+
 					<?php echo get_the_post_thumbnail( $post_id, 'single-thumb' ); ?>
 					<div id="thumb_caption">
 						<?php the_post_thumbnail_caption(); ?>
 					</div>
 					
 					<ul>
-					<li><a href="/coaching/fascat-coaches/" class="highlight">Meet the coaches</a></li>
-					<li><a href="/price-plan/">See coaching plans</a></li>
-					<li><a href="/powermeters/">Powermeters</a></li>
-					<li>
-						<h2>Free Month</h2>
-						<p>of coaching with every<br />powermeter purchase</p>
-					</li>
+						<li><a href="/coaching/fascat-coaches/" class="highlight">Meet the coaches</a></li>
+						<li><a href="/price-plan/">See coaching plans</a></li>
+						<li><a href="/powermeters/">Powermeters</a></li>
 					</ul>
+					<div class="free_month_tips">
+						<a href= "http://fascat.wpengine.com/wp-content/uploads/2015/01/flyer.png" rel=”lightbox”>
+						<h1>FREE MONTH</h1>
+							<p>of coaching with every<br />
+							powermeter purchase</p>
+						</a>		
+					</div>  <!-- free month ends -->
 				</div>
 			</section><!-- .content_wrapper -->
 		</article><!-- .post -->
