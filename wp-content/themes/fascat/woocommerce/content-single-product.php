@@ -13,6 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 
 <div itemscope itemtype="http://schema.org/Product" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="product-head">
+		<div class="name-rating">
+			<?php
+
+				woocommerce_template_single_title();
+				woocommerce_template_single_rating();
+			?>
+		</div>
+		<?php
+			woocommerce_template_single_price();
+			woocommerce_get_sidebar();
+		?>
+		
+	</div>
 
 	<?php
 		/**
@@ -22,11 +36,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * @hooked woocommerce_show_product_images - 20
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
+		woocommerce_output_product_data_tabs();
 	?>
 
 	<div class="summary entry-summary">
 
 		<?php
+			
+
 			/**
 			 * woocommerce_single_product_summary hook
 			 *
@@ -45,7 +62,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<div class="clear"></div>
 
 <div itemprop="description">
-	
 </div>
 
 </div><!-- #product-<?php the_ID(); ?> -->

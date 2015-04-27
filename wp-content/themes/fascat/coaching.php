@@ -39,7 +39,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 	        <header>
                 <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
-			      <div class="header_txt" style="width:42%">
+			      <div class="header_txt" style= "top:70px">
                     <h2><?php echo $cfs->get('custom_header_heading'); ?></h2>
                     <p><?php echo $cfs->get('custom_header_text'); ?></p>
                     <a class="button small_txt" href="<?php echo $cfs->get('button_url'); ?>"><?php echo $cfs->get('button_text'); ?> <i class="fa fa-chevron-right"></i></a>
@@ -60,7 +60,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
             </ul>
 					<div style="width:100%;">
 						<div class="view_plan">
-							<h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/how.png" class="inline"/>   How We Coach</h2>
+							<h2 class="coaching-page"><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/how.png" class="inline"/>   How We Coach</h2>
 					   </div>
                     </div>
 
@@ -157,7 +157,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 			<article>
 		         <section class="content_wrapper" id="train">
 	                <section class="entry fix">
-		             <div class="coach_view"><h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/alaram.png"/>&nbsp;View Plans</h2><p>View the 3 custom built Plans</p></div>
+		             <div class="coach_view"><h2 class="coaching-page"><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/alaram.png"/>&nbsp;Coaching Plans</h2></div>
 					
 					 
 					 	<?php /* ?>
@@ -202,43 +202,41 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		</div>
 		
 		
-		    <div class="dots_bg camps_listing" style="margin-top:0px;" id="science">
+		    <div class="dots_bg" style="margin-top:0px;" id="science">
+		    	<section class="entry">
+	               <div class="content_wrapper">
+			          <h2 class = "coaching-page"><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/glass_04.png"/>&nbsp;The Science</h2>
+			                   <?php query_posts('post_type=page&page_id=386');?>
+	                           <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-               <div class="content_wrapper">
-		          <h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/glass_04.png"/>&nbsp;The Science</h2>
-		                   <?php query_posts('post_type=page&page_id=386');?>
-                           <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-                           <?php the_content();?>
-                           <?php endwhile;?>
+	                           <?php the_content();?>
+	                           <?php endwhile;?>
 						   
             
-		<div class="clear"> </div>
+					<div class="clear"> </div>
+	    			</div>	<!-- .content_wrapper ends -->
+	 			</section>
+        	</div>  <!-- camps_listing ends -->
 
-	     </div>	<!-- .content_wrapper ends -->
-        </div>  <!-- camps_listing ends -->
-
-		        <div class="our_coach_bg">
+		   	<div class="our_coach_bg">
+		   		<section class ="entry">
 
             <div class="content_wrapper">
 			
-		<h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/coa_05.png">&nbsp;Our Coaches</h2>
+		<h2 class = "coaching-page"><img src="<?php echo $siteUrl?>/wp-content/uploads/2015/04/coa_05.png">&nbsp;Our Coaches</h2>
             <?php $my_query = new WP_Query( array(
       'post_type'=>'coach',
-      'posts_per_page' => 4,
+      'posts_per_page' => 12,
       'order' => 'ASC'
      ));?>
             <?php if ( $my_query->have_posts() ) while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
               <div class="featured_image our_featured_image ">
                <a href="<?php echo get_the_permalink();?>"><?php the_post_thumbnail('full'); ?>
-				  <div class="overlay">
 					<h5><?php the_title();?></h5>
 					<!-- <p><?php //the_excerpt();?></p> -->
-				  </div>	<!-- .overlay ends -->
-		          <div class="magnifier"> </div>
 		       </a>
-		</div>	<!-- featured_image ends -->
+			</div>	<!-- featured_image ends -->
 		<?php endwhile;?>
 		
 
@@ -246,6 +244,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		<div class="clear"> </div>
 
 	     </div>	<!-- .content_wrapper ends -->
+	    </section>
 
         </div>  <!-- camps_listing ends -->
 		

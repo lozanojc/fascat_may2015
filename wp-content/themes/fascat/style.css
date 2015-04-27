@@ -1744,14 +1744,17 @@ p.demo_store {
   font-size: 1em;
   width: 5.5em;
   font-family: "WebSymbolsRegular";
+  float: left;
+  display:block;
 }
+
 .star-rating:before {
   content: "RRRRR";
   float: left;
   top: 0;
   left: 0;
   position: absolute;
-  color: #e3dad7;
+  color: #D3B7AE;
 }
 .star-rating span {
   overflow: hidden;
@@ -1766,7 +1769,7 @@ p.demo_store {
   top: 0;
   position: absolute;
   left: 0;
-  color: #666666;
+  color: #f94b06;
 }
 .widget .star-rating {
   margin: .53em 0;
@@ -1945,13 +1948,6 @@ dl.variation dd ul {
   background: #f4e7e6;
 }
 
-
-
-form.cart {
-  display: block;
-  border-left: 2px solid #f94b06 !important;
-}
-
 /* 7.1 Messages */
 .woocommerce_message,
 .woocommerce_info,
@@ -2075,6 +2071,8 @@ ul.products li.product:nth-child(2n) {
 }
 ul.products .star-rating {
   margin: .5em auto;
+  text-align:center;
+  margin-left:35%;
 }
 .pagination-wrap {
   margin-bottom: 1.618em;
@@ -2129,8 +2127,8 @@ ul.products .star-rating {
 }
 .onsale {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 150px;
+  left: -20px;
   background: #ff4800;
   color: #fff;
   font-weight: bold;
@@ -2142,7 +2140,9 @@ ul.products .star-rating {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   text-transform: uppercase;
+  z-index: 2;
 }
+
 a.reset_variations:before {
   font-family: 'WebSymbolsRegular';
   display: inline-block;
@@ -2968,7 +2968,7 @@ input[type=submit],
 input.button,
 button.button {
   display: inline-block;
-  padding: .236em .857em;
+  padding: 0.4em 0.9em;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -2993,33 +2993,11 @@ button.button {
   font-weight: 700;
   text-transform: uppercase;
   /* text-shadow: 0 1px 0 #cc1500; */
-  background-color: #ff5911;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff5911), to(#dd2600));
-  /* Saf4+, Chrome */
-
-  background-image: -webkit-linear-gradient(top, #ff5911, #dd2600);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-
-  background-image: -moz-linear-gradient(top, #ff5911, #dd2600);
-  /* FF3.6+ */
-
-  background-image: -ms-linear-gradient(top, #ff5911, #dd2600);
-  /* IE10 */
-
-  background-image: -o-linear-gradient(top, #ff5911, #dd2600);
-  /* Opera 11.10+ */
-
-  background-image: linear-gradient(to bottom, #ff5911, #dd2600);
-  /*border: 1px solid #bb0400;
-  -webkit-border-radius: 0.202em;
-  border-radius: 0.202em;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;*/
-  /* -webkit-box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px #ff7b33, inset 0 -1px #cc1500;
-  box-shadow: 0 0 0 0.327em rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px #ff7b33, inset 0 -1px #cc1500; */
+  background-color: #F94B06;
+  color: #FFFFFF;
   margin-bottom:10px;
 }
+
 a.button.alt,
 a.comment-reply-link.alt,
 #commentform #submit.alt,
@@ -3065,7 +3043,7 @@ a.comment-reply-link.checkout:hover,
 input[type=submit].checkout:hover,
 input.button.checkout:hover,
 button.button.checkout:hover {
-  background-color: #777777;
+  background-color: #F94B06;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#777777), to(#555555));
   /* Saf4+, Chrome */
 
@@ -3141,23 +3119,8 @@ input[type=submit]:hover,
 input.button:hover,
 button.button:hover {
   text-decoration: none;
-  background-color: #ff5911;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff5911), to(#ee3700));
-  /* Saf4+, Chrome */
-
-  background-image: -webkit-linear-gradient(top, #ff5911, #ee3700);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-
-  background-image: -moz-linear-gradient(top, #ff5911, #ee3700);
-  /* FF3.6+ */
-
-  background-image: -ms-linear-gradient(top, #ff5911, #ee3700);
-  /* IE10 */
-
-  background-image: -o-linear-gradient(top, #ff5911, #ee3700);
-  /* Opera 11.10+ */
-
-  background-image: linear-gradient(to bottom, #ff5911, #ee3700);
+  background-color: #333;
+  color:#fff;
 }
 a.button:active,
 a.comment-reply-link:active,
@@ -3275,10 +3238,9 @@ img.ui-datepicker-trigger {
 	padding: 25px 0 50px;
 }
 .content_wrapper, #footer-widgets, #footer {
-	max-width: 980px;
+	max-width: 100%;
 	overflow: hidden;
-	margin-left: 150px;
-	margin: 0 auto/*!important;messes up home page*/
+  margin: 0 auto 80px 30px !important;
 }
 .home .content_wrapper, .home #footer-widgets, .home #footer {
 	margin-left: 0;

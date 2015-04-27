@@ -63,7 +63,7 @@ display: inline-table;
 
 		?>
 
-	   <div id="content" class="page col-full">   
+	   <div id="product-archive-content" class="page col-full">   
 		<?php woo_main_before(); ?>
 
 
@@ -82,7 +82,7 @@ display: inline-table;
 		
 	<div class="products-page-main">
 		<?php $args = array(
-			'posts_per_page' => 10,
+			'posts_per_page' => 100,
 			'product_cat' => 'featured-products',
 			'post_type' => 'product',
 			'orderby' => 'title',
@@ -105,7 +105,10 @@ display: inline-table;
 					
 								<h5>
 									<div>
-										<a href="<?php the_permalink() ?>"><?php echo get_the_title();?></a>
+										<a href="<?php the_permalink() ?>"><?php echo get_the_title();?>
+
+
+										</a>
 									</div>
 								</h5>
 						
@@ -115,9 +118,23 @@ display: inline-table;
 											<span><?php echo $price_html; ?></span>
 										</div>
 									<?php endif; ?>
+
+									<div class="srm_price22">									
+									<?php if ( $rating_html = $product->get_rating_html() ) { ?>
+											<?php echo $rating_html; ?>
+										<?php } else {
+										$rating_html  = '<div class="star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ) . '">';
+										  $rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'woocommerce' ) . '</span>';
+										  $rating_html .= '</div>';
+										  
+										  ?> <span> <?php echo $rating_html; ?> </span>
+										  <?php
+										}?>
+									</div>
 						
 									<div class="srm_add22">
 										<a href="<?php the_permalink() ?>">ADD &nbsp; <img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/shop.png"/></a>
+
 									</div>
 								</div>
 							
@@ -185,6 +202,20 @@ else{ //do the category loop
 											<span><?php echo $price_html; ?></span>
 										</div>
 									<?php endif; ?>
+
+
+										<div class="srm_price22">									
+										<?php if ( $rating_html = $product->get_rating_html() ) { ?>
+												<?php echo $rating_html; ?>
+											<?php } else {
+											$rating_html  = '<div class="star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ) . '">';
+											  $rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'woocommerce' ) . '</span>';
+											  $rating_html .= '</div>';
+											  
+											  ?> <span> <?php echo $rating_html; ?> </span>
+											  <?php
+											}?>
+										</div>
 									
 									<div class="srm_add22">
 										<a href="<?php echo $link;?>">ADD &nbsp; <img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/shop.png"/></a>
@@ -222,6 +253,19 @@ else{ //do the category loop
                     <?php if('' !== ($price = $product->get_price())){?>
                           <div class="srm_price22<?php if($isSale)echo ' sale';?>"><span class="amount"><?php echo $currency . $price; ?></span></div>
                     <?php }?>
+                    		<div class="srm_price22">									
+									<?php if ( $rating_html = $product->get_rating_html() ) { ?>
+											<?php echo $rating_html; ?>
+										<?php } else {
+										$rating_html  = '<div class="star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ) . '">';
+										  $rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'woocommerce' ) . '</span>';
+										  $rating_html .= '</div>';
+										  
+										  ?> <span> <?php echo $rating_html; ?> </span>
+										  <?php
+										}?>
+									</div>
+
                           <div class="srm_add22">
                               <a href="<?php echo $link?>">ADD&nbsp;&nbsp;<img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/shop.png"/></a>
                           </div>
@@ -233,6 +277,8 @@ else{ //do the category loop
 
 						
 		 	 </div>
+
+
 				  
 
 				  <div class="clear"> </div>                   
@@ -246,7 +292,9 @@ else{ //do the category loop
 		
 				
 			
-	<?php woo_main_after(); ?>
+	<?php
+	 woo_main_after(); 
+	 ?>
 
     </div><!-- #content -->
 <?php get_footer(); ?>

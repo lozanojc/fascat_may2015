@@ -52,13 +52,34 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 	                
     			<section class="content_wrapper">
 	                <section class="entry fix">
-	                	 <ul id="submenu">
-              <li<?php if('fascat-custom-coachingtraining-camps' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo($siteUrl = site_url());?>/camps/fascat-custom-coachingtraining-camps">Custom 1 on 1 weekend</a></li>
-              <li<?php if('jeremy-powers-cyclocross' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/camps/jeremy-powers-cyclocross/">Jeremy Powers Cyclocross</a></li>
-              <li<?php if('mountain-bike-skills-clinic-with-myles-rockwell' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/camps/mountain-bike-skills-clinic-with-myles-rockwell">MTB Skill Clinic</a></li>
-              <li<?php if('junior-training-group-with-fascat-coaching' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/camps/junior-training-group-with-fascat-coaching">Junior Training Group</a></li>
-              <li<?php if('fascat-cycleops-power-training-camp-with-timmy-duggan' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/camps/fascat-cycleops-power-training-camp-with-timmy-duggan">Cycleops Power Camp</a></li>
-            </ul>
+	                	<ul id="submenu">
+
+
+	                		<?php 
+	                		$temp = get_the_ID();
+
+	                		query_posts(array(
+            	   			'post_type'=> 'camps',
+	  	    				'posts_per_page' => 5,
+	  	    				'orderby' => 'post_date',
+	  	    				'order' => 'DESC',
+	      	 				 ));
+           				?>
+				           <?php if (have_posts()) : while (have_posts()) : the_post(); 
+						  $i++; //add 1 to the total count
+						  $class = ( $temp == get_the_ID() ) ? 'active' : '';
+				           ?>
+
+				            <li class= "<?php '. $class .' ?>">
+					           	<a href="<?php the_permalink(); ?>">
+					           		<?php the_title(); ?>
+								</a>
+							</li>
+				            
+				            	<?php endwhile;?>
+						<?php endif; wp_reset_query();?>
+
+            			</ul>
 	                	<?php the_content(); ?> 
 				<div class="clear"> </div>                   
 			   </section>
@@ -75,24 +96,21 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 	  	    'order' => 'DESC',
 	      	  ));
             ?>
-               
+             <section class="entry">  
             <div class="content_wrapper">
-		<h2>Camps</h2>
+				<h2>Camps</h2>
 
-           <?php if (have_posts()) : while (have_posts()) : the_post(); 
-	   	  $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-		  $i++; //add 1 to the total count
-           ?>
+		           <?php if (have_posts()) : while (have_posts()) : the_post(); 
+			   	  $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+				  $i++; //add 1 to the total count
+		           ?>
 
-              <div class="featured_image">
-            	  <a href="<?php the_permalink(); ?>">
-		     <?php the_post_thumbnail(); ?>
-		     <div class="overlay">
-		     	<h5><?php the_title(); ?></h5>
-		     </div>	<!-- .overlay ends -->
-		     <div class="magnifier"> </div>
-		  </a>
-		</div>	<!-- featured_image ends -->
+		              <div class="featured_image">
+		                <a href="<?php the_permalink(); ?>">
+		                  <?php the_post_thumbnail(); ?>
+		                  <h5><?php the_title();?></h5>
+		                </a>
+              		</div>	<!-- featured_image ends -->
             
             	<?php endwhile;?>
 		<?php endif; ?>
@@ -100,6 +118,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		<div class="clear"> </div>
 
 	     </div>	<!-- .content_wrapper ends -->
+	 </section>
 
         </div>  <!-- camps_listing ends -->
 

@@ -10,6 +10,8 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
 ?>
 
+</div><!-- /#wrapper -->
+
 <?php
 
 /**
@@ -131,7 +133,6 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
 
 
-</div><!-- /#wrapper -->
 
 
 

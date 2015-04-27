@@ -100,17 +100,9 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
                       </div> 
           <?php  } ?>
         
-   
-          
-
-       <div class="content_wrapper">
-       <?php the_content(); ?>
-    </div>  <!-- /.content_wrapper ends -->
-        
 
     <section class="content_wrapper">
-            <article <?php post_class(); ?>>
-            <section  class="col-left tips">
+            <section  class="tips entry">
 
            
         <?php //if (have_posts()) : 
@@ -249,7 +241,6 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
         </div>
 
                 </section><!-- #main -->
-            </article><!-- .post -->
         
        </section><!-- .content_wrapper -->
         

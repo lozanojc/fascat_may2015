@@ -19,5 +19,7 @@ if ( ! $post->post_excerpt ) {
 
 ?>
 <div itemprop="description">
+	<h2 class="description">Product Description</h2>
+	<i class="fa fa-shopping-cart"></i>
 	<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
 </div>

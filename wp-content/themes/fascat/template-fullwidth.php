@@ -70,10 +70,11 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
             <?php if('fascat-coaches' === $post->post_name){//this is the only coaching page that uses this template?>
             <ul id="submenu">
               <li<?php if('coaching' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo($siteUrl = site_url())?>/coaching/">How We Coach</a></li>
-              <li<?php if('price-plan' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/coaching/price-plan/">Pricing Plan</a></li>
+              <li<?php if('price-plan-for-our-3-courses' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/price-plan/">Pricing Plan</a></li>
               <li<?php if('fascat-coaches' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/coaching/fascat-coaches/">FasCat Coaches</a></li>
-              <li<?php if('fascat-athletes' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/coaching/fascat-athletes/">FasCat Athletes</a></li>
+              <li<?php if('fascat-athletes' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/coaching/fascat-athletes/">FasCat Athletes + Testimonials</a></li>
               <li<?php if('get-started' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/price-plan/">Get Started</a></li>
+              <li<?php if('tips' === $post->post_name){echo ' class="active"';}?>><a href="<?php echo $siteUrl?>/tips/">Training Tips</a></li>
             </ul>
             <?php } else {} ?>
 	                	<?php the_content(); ?>
