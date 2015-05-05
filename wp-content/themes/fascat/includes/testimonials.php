@@ -1,6 +1,6 @@
 <div class="testimonials_bg">
 	<section class="content_wrapper">
-		<h2 class="big_heading">Testimonials</h2>
+		<h2 class="big_heading">Athlete Testimonials</h2>
 		
 		<section class="entry fix">
 			<?php $args = array(
@@ -32,7 +32,7 @@
 		
 		<div class="clear"></div>
 		
-		<a class="button small_txt" href="<?php bloginfo( 'url' ) ?>/coaching/fascat-athletes/">VIEW MORE <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
+		<a class="button small_txt" href="<?php bloginfo( 'url' ) ?>/coaching/fascat-athletes/">VIEW MORE ATHLETE TESTIMONIALS <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
 	
 	</section><!-- .content_wrapper -->
 </div>	<!-- testimonials_bg ends -->

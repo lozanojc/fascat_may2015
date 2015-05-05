@@ -39,14 +39,14 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		<article <?php post_class(); ?>>
 
 	           <header>
-                      <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
-			   <div class="header_txt">
+                     <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
+			   			<div class="header_txt">
                           <h2>Camps</h2>
-		            <p><?php echo($title = get_the_title());?></p>
-	                    <a class="button small_txt" href="<?php echo($mailTo = 'info@fascatcoaching.com?subject=' . urlencode($title));?>">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
+		            		<p><?php echo($title = get_the_title());?></p>
+	                   		 <a class="button small_txt" href="<?php echo($mailTo = 'info@fascatcoaching.com?subject=' . urlencode($title));?>">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
 
-	                 </div>
-			 </div>
+	                 	</div>
+					</div>
 	             </header>
 
 	                

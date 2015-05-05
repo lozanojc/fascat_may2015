@@ -18,7 +18,7 @@
 	</div>
 	
 	<div class="communication">
-		<h4>communication</h4>
+		<h4>Communication</h4>
 		<ul>
 		<li>Unlimted Email</li>
 		<li>Available to Call (& Talk) with your Coach</li>

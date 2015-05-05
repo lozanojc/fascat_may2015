@@ -181,6 +181,7 @@ function sc_show_payment_details( $content ) {
 				$html .= '</p>' . "\n";
 
 				$html .= '<p>' . sprintf( __( 'Your transaction ID is: %s', 'sc' ), $charge_id ) . '</p>' . "\n";
+				$html .= '<p>' . __( 'Please check your email for a purchase confirmation from Fascat Coaching. <br/><strong>If you have any questions, contact us at 720 406 7444 or info@fascatcoaching.com', 'sc' ) . '</strong></p>' . "\n";
 
 				$html .= '</div>' . "\n";
 

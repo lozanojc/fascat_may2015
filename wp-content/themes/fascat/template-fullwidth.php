@@ -112,6 +112,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
       <div class="coach_content condense">
         <h5><?php the_title(); ?></h5>
+        <span class="title-coach"><?php echo $cfs->get('custom_header_text'); ?></span>
                        <?php the_content(); ?>
       </div>  <!-- /.coach_content ends -->
 

@@ -293,6 +293,7 @@ border:2px solid #cfcfcf
   font: 24px/34px 'Open Sans';
   color: #24282b;
   margin: 0;
+  width:67%;
 }
 .header_txt h2, .custom_page_header h1 {
   font: 700 40px 'Open Sans';
@@ -633,12 +634,16 @@ height: auto !important;
   padding: 30px 0 30px 82px;
   color: #fff;
 }
+
 .testimonials_bg .bx-wrapper {
-  margin:0 auto 25px;
+  margin: 0 auto;
+  padding: 0;
+  width: 500px !important;
+  float: left;
+  overflow: visible;
+  margin-top: -15px;
 }
-.coach .entry {
-  padding: 30px 0;/* 90px;*/
-}
+
 .coach_pic {
   width: 20%;
   float: left;
@@ -698,19 +703,22 @@ span.dull_grey_bg {
 }
 
 .testimonials_bg {
-  margin: 50px 0 0;
-  padding: 30px 0 0;
-  background: url(images/testimonial_bg.jpg) no-repeat top center;
-  background-size: cover;
-  height: 582px;
-  color: #fff;
+  background: url("images/philgaimontestimonials.png")no-repeat scroll bottom center rgba(0, 0, 0, 1);
+  height: 400px;
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  color:#fff;
 }
+
 .testimonials_bg .content_wrapper {
-  width: 39%;
+  width: 1050px;
+  margin: 0 auto !important;
 }
 .testimonial_content h5 {
-  padding: 0 0 30px;
-  color: #fff;
+  padding: 5px 0;
+  font-size: 20px;
+  color: #F94B06;
 }
 .front_quotes {
   margin-right: 20px;
@@ -1570,7 +1578,7 @@ color:#fff;
 .index3 p{
     font-size: 80%;
     line-height: 20pt;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 /* .index3 p:hover { color:#fff; } */
 .index3 h1{
@@ -2185,19 +2193,28 @@ color: #BE2026;
     font-weight: bold;
 }
 
-.athletes_bg{
-    background: url("images/athlbg.png")no-repeat scroll top center rgba(0, 0, 0, 0);
-    height: 100%;
-    position: relative;
-    width: 100%;
-    background-size: cover;
+.athletes_bg {
+  background: url("images/philgaimontestimonials.png")no-repeat scroll bottom center rgba(0, 0, 0, 1);
+  height: 400px;
+  position: relative;
+  width: 100%;
+  max-height: 400px;
 }
 
-.testemonials{
-float:right;
-color:#f94b06;
-margin-top:130px;
-width:400px;
+.athletes_bg .content_wrapper.entry {
+  height: 360px;
+  margin: 0 auto !important;
+  padding-top:60px;
+}
+
+.testemonials {
+  float: left;
+  color: #f94b06;
+  margin-top: 130px;
+  width: 500px;
+  margin: 10px auto 0 auto;
+  position: relative;
+  display: inline-block;
 }
 
 .testemonials h1{
@@ -2207,11 +2224,11 @@ color:#f94b06;
 
 .testemonials h5{
 font-size:20px;
-color:#f94b06;
+color:#fff;
 }
 
 .testemonials p{
-color:#fb8a57;
+color:#fff;
 }
 
 .testemonials strong{
@@ -2221,7 +2238,6 @@ color:#f94b06;
 
 .testemonials_button{
     background-color: #f94b06;
-    border-radius: 2px;
     color: #FFFFFF;
     font-size: 18px;
     font-weight: bold;
@@ -2237,6 +2253,15 @@ color:#f94b06;
     color: #FFFFFF;
     font-size: 18px;
     font-weight: bold;
+    padding-top: 4px;
+    padding-left: 12px;
+    position: relative;
+    float: left;
+}
+
+.testemonials_button img {
+  top: 8px;
+  position: absolute;
 }
 
 .free{
@@ -4217,12 +4242,17 @@ body.single-product input.input-text {
 	margin-bottom: 20px;
 }
 
-.page-template-coaching-php a { color: #FFFFFF; }
 .page-template-price_plan-php a.signup:hover,
 .page-template-coaching-php a.signup:hover {
-	background: #000000;
+	background: #333 !important;
 	color: #FFFFFF;
 }
+
+.headerindex.index3 a {
+  padding: 10px;
+}
+
+
 .page-template-price_plan-php #product .index strong,
 .page-template-price_plan-php #product .Get_Started strong,
 .page-template-coaching-php #product .index strong,
@@ -4419,7 +4449,7 @@ width: 700px;
 }
 
 .index3, .index {
-  width:206px;
+  width:230px;
 }
 
 .block{
@@ -4674,7 +4704,7 @@ span.indent {
 
 .type-coach h5 {
   margin: 0;
-  padding: 0px 0 20px !important;
+  padding: 0;
 }
 
 p { 
@@ -4803,6 +4833,7 @@ overflow: hidden;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 20px;
+  color:#fff;
 }
 
 .post-type-archive-product .shop_header {
@@ -4970,6 +5001,16 @@ form.cart, .stages_text {
   padding-right: 30px;
 }
 
+.stages_text {
+  top:0;
+  left:0;
+  z-index: 2;
+  background:#fff;
+}
+
+
+
+
 .single-product button.single_add_to_cart_button {
 border: 0 !important;
 padding: 5px 30px;
@@ -5038,6 +5079,10 @@ select#sc_cf_select_1 {
   font-size: 14px;
   width: 167px;
   border: 1px solid #999;
+}
+
+.single-camps select#sc_cf_select_1 {
+  height:45px;
 }
 
 section.sidebar-content ul li {
@@ -5440,9 +5485,8 @@ span.amount {
 }
 
 .variations td > select {
-  height: 28px;
-  line-height: 28px;
-  padding: 29px 62px;
+  line-height: 1;
+  padding: 5px 12px;
   border-radius: 0px !important;
   background: #ffffff;
   border: 2px solid #cfcfcf;
@@ -5464,6 +5508,7 @@ span.amount {
 
 p.disclaimer1 {
   font-weight: bold;
+  color:#F94B06;
 }
 
 .camps_listing .entry h2 {
@@ -5471,4 +5516,153 @@ p.disclaimer1 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+
+p.cart-stages {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+p.cart-stages > a {
+  width: 37%;
+  display: inline-block;
+  float: left;
+  padding: .5em 1em;
+}
+
+li#menu-item-2098 {
+  height: 80px;
+}
+
+.stripe-camps-checkout {
+  position: relative;
+  width: 500px;
+  top: -53px;
+  z-index: 9;
+  display: none;
+}
+
+.stripe-camps-checkout .sc-form-group {
+  display: inline-block;
+  width:280px;
+}
+
+
+.stripe-camps-checkout .sc-form-group select {
+  width: 98% !important;
+}
+
+
+.single-camps .sc-payment-details-wrap {
+  position: relative;
+  float: left;
+  width: 980px;
+  display: inline-block;
+  padding: 50px;
+}
+
+
+.single-camps button.sc-payment-btn {
+  padding:7px 20px;
+}
+
+.single-camps .sc-payment-btn span {
+  font-weight: 900;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.stripe-camps-checkout .sc-form-group {
+  display: inline-block;
+  width: 280px;
+  height: 44px;
+  vertical-align: top;
+}
+
+.postid-275 .stripe-camps-checkout {
+  top: -51px;
+  z-index: 9;
+  display: block;
+}
+
+.single-camps .header_txt .sc-payment-details-wrap {
+  display: none;
+}
+
+.postid-156 a.button.small_txt.camps-sign-up {
+  display: none;
+}
+
+.page-template-physiological-testing .header_txt h1 {
+  color:#fff;
+}
+
+.page-template-physiological-testing .header_txt p {
+  color:#fff;
+}
+
+.bx-viewport .entry article {
+  width: 500px !important;
+  float: left !important;
+  left: 0;
+  padding-top: 10px;
+}
+
+.bx-wrapper .bx-viewport {
+  overflow: visible !important;
+}
+
+.big_heading.coaches {
+  float:left;
+  width:100%;
+}
+
+.single-coach .header_txt h2 {
+  color:#fff;
+}
+
+.single-coach .header_txt p {
+    color:#fff;
+}
+
+span.title-coach {
+  line-height: 1;
+  font-size: 14px;
+  color: #F94B06;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  display: block;
+}
+
+.featured_image .title-coach {
+  opacity:0;
+  font-size: 12px;
+  position: absolute;
+  top: 74%;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.featured_image:hover .title-coach {
+  opacity:1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 250ms;
+  -moz-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+.type-coach {
+  padding: 20px 0;
+}
+
+.type-coach .entry{
+  padding-left: 0;
 }

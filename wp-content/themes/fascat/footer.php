@@ -218,7 +218,7 @@ if(jQuery('body').hasClass('page-id-353')){
 
 
 		    		jQuery(window).bind('scroll', function () {
-					    if (jQuery(window).scrollTop() + 150 > $height) {
+					    if (jQuery(window).scrollTop() + 300 > $height) {
 					        jQuery('.block').height(220);
 						  	jQuery('.headerindex a').fadeOut();
 						  	jQuery('.headerindex p').fadeOut();
@@ -236,7 +236,13 @@ if(jQuery('body').hasClass('page-id-353')){
     	}
 }
 
+jQuery('.hide-stages').on('click', function(){
+	jQuery('.stages_text').fadeOut();
+});
 
+jQuery('.camps-sign-up').on('click', function(){
+	jQuery('.stripe-camps-checkout').fadeToggle();
+});
 
 
 </script>
