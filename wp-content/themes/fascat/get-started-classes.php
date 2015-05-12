@@ -38,12 +38,17 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 	        <header>
                 <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
-			      <div class="header_txt" style="width:42%">
+			      <div class="header_txt">
                     <h2><?php echo $cfs->get('custom_header_heading'); ?></h2>
                     <p><?php echo $cfs->get('custom_header_text'); ?></p>
                   </div>
 			    </div>
 	        </header>
+
+	        <section class="entry">
+	        	<?php the_content(); ?>
+	        </section>
+
 			            
             	<?php endwhile;?>
           <?php } ?>  
@@ -51,7 +56,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
         
 
 
-
+<!-- 
 		<div class="content_wrapper listings-class" id="choose-a-class" style="padding-bottom: 25px;">
 			<h2>Choose a class</h2>
 			<div class="class-listing">
@@ -128,10 +133,10 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		</div>
 
 
-
+ -->
 		
 			<!-- BEGIN orange dot section -->
-		    <div class="dots_bg" style="margin-top:0px;">
+		   <!--  <div class="dots_bg" style="margin-top:0px;">
 
                <div class="content_wrapper oj-get-started">
 		            
@@ -169,7 +174,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		
 
 
-
+ -->
 		
 		  
 		
@@ -178,7 +183,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 
 
-
+<!-- 
 
 		           <?php query_posts(array(
             	    'post_type'=> 'testimonials',
@@ -201,7 +206,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 
 			
 	            	<?php endwhile;?>
-          <?php } ?>  
+          <?php } ?>   -->
 			<div class="clear"> </div>
 			</div>
 			</div>

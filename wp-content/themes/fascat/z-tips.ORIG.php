@@ -71,7 +71,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
        ?>
                 <section class="entry fix">
                 <div style="width:60%;float:left;">
-            <h2> <?php the_title(); ?><span class="orange italic">(<?php the_date('n.d.y'); ?>)</span></h2>
+            <h2> <?php the_title(); ?></h2>
                     <p> <?php the_excerpt(); ?> </p>
                     <a class="button small_txt" href="<?php the_permalink(); ?>">Read More</a>
                 </div>

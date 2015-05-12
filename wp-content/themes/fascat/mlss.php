@@ -13,7 +13,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 <?php
 
 /**
- * Template Name: Careers
+ * Template Name: MLSS
  *
  * This template is a About template file showing its content and Coaches.
  *
@@ -38,48 +38,47 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
         
           <div class="custom_page_header page_headers" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
 	      <div class="header_txt">
-                 <h2><?php echo $cfs->get('custom_header_heading'); ?></h2>
+                 <h1><?php echo $cfs->get('custom_header_heading'); ?></h1>
                  <p><?php echo $cfs->get('custom_header_text'); ?></p>
+                 <a class="button small_txt" href="<?php echo $cfs->get('button_url'); ?>"><?php echo $cfs->get('button_text'); ?> <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
              </div>
 	   </div>        
 
     	<section class="fullwidth entry">
-           <ul id="submenu">
-              <li><a href="<?php echo($siteUrl = site_url());?>/about/">Overview</a></li>
-          <!--     <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li> -->
-              <li class="active"><a href="<?php echo $siteUrl?>/careers/">Careers</a></li>
-              <li><a href="<?php echo $siteUrl?>/contact-us/">Contact</a></li>
-              <li><a href="<?php echo $siteUrl?>/athlete-handbook/">New Athlete Handbook</a></li>
-              <li><a href="<?php echo $siteUrl?>/core-value/">Core Coaching Values</a></li>
+            <ul id="submenu">
+              <li><a href="<?php echo get_site_url(); ?>/services/physiological-testing/">Physiological Testing</a></li>
+              <li><a href="<?php echo get_site_url(); ?>/services/bicycle-fitting/">Bicycle Fitting</li>
+              <li class="active"><a href="<?php echo get_site_url(); ?>/services/mlss/">Maximal Lactate Steady State Testing</a></li>
             </ul>
         <div class="clear"></div>
+
                 <article <?php post_class(); ?>>
 
                     <section>
 	                	<?php the_content(); ?>
-	             </section><!-- /.entry -->
+	                </section><!-- /.entry -->
 
-		    <?php edit_post_link( __( '{ Edit }', 'fascat' ), '<span class="small">', '</span>' ); ?>
+		        <?php edit_post_link( __( '{ Edit }', 'fascat' ), '<span class="small">', '</span>' ); ?>
 
                 </article><!-- /.post -->
 
-		  <?php
+		    <?php
 
 		    } // End WHILE Loop
 
-		 } else {
+		    } else {
 
-		 ?>
+		    ?>
 
-		<article <?php post_class(); ?>>
+		    <article <?php post_class(); ?>>
                 	<p><?php _e( 'Sorry, no posts matched your criteria.', 'fascat' ); ?></p>
-              </article><!-- /.post -->
+            </article><!-- /.post -->
         
-              <?php } ?> 
+            <?php } ?>
 
- 
-        <p>&nbsp;</p>
         </section><!-- .content_wrapper --> 
+
+		<?php include(locate_template('includes/testimonials.php')); ?>
 
 	<?php //woo_main_after(); ?>
 

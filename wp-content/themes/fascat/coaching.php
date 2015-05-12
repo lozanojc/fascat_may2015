@@ -234,6 +234,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
               <div class="featured_image our_featured_image ">
                <a href="<?php echo get_the_permalink();?>"><?php the_post_thumbnail('full'); ?>
 					<h5><?php the_title();?></h5>
+					<span class="title-coach"><?php echo $cfs->get('custom_header_text'); ?></span>
 					<!-- <p><?php //the_excerpt();?></p> -->
 		       </a>
 			</div>	<!-- featured_image ends -->
@@ -250,107 +251,7 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		<?php /* ?>
-		           <?php query_posts(array(
-            	    'post_type'=> 'coach',
-	  	    'posts_per_page' => 1,
-	  	    'orderby' => 'post_date',
-	  	    'order' => 'DESC',
-	      	 ));
-           ?>
-
-        <?php
-
-        	if ( have_posts() ) { $count = 0;
-
-        		while ( have_posts() ) : the_post(); $count++;
-
-        ?>
-		
-		
-		<div class="training_cal">
-          <div class="train_calender">
-		        <div class="content_wrapper" style="max-width:350px;">
-			
-			
-			<?php echo $cfs->get('training_calendar'); ?>
-		          <h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/train.png">&nbsp;Training Calendar</h2>
-		  
-                  <h5>INCLUDING ANNUAL TRAINING PLAN</h5>
-				________
-				
-				<p>Training Calendar Design including Annual Training Plan "your coach designs a new training calendar for you every 4 weeks.</p>
-
-		  <div class="train_button"><a href="<?php echo $siteUrl?>/coaching/get-started/">SEE SAMPLE CALENDAR &nbsp;&nbsp;<img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/left_arrow_02.png"/></a></div>
-
-	     </div>	<!-- .content_wrapper ends -->
-		  </div>
-		  
-		  <div class="train_power">
-		        <div class="content_wrapper" style="max-width:350px;">
-			<?php echo $cfs->get('training_with_power'); ?>
-		          <h2><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/toffe.png">&nbsp;Training With Power</h2>
-		  
-                  <h5>TRAINING WITH POWER</h5>
-				________
-				
-				<p>Training With Power <span>with supported image?</span>- "the best way to train and share your workout data with your coach for feedback and analysis"</p>
-
-		  <div class="train_button"><a href="<?php echo $siteUrl?>/coaching/get-started/">SEE SAMPLE CALENDAR &nbsp;&nbsp;<img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/left_arrow_02.png"/></a></div>
-
-	     </div>	<!-- .content_wrapper ends -->		  
-		  
-		  
-		  </div>
-		  <div class="clear"> </div>
-		
-		</div>  <!-- camps_listing ends -->
-		
-		            	<?php endwhile;?>
-          <?php } ?>
-		  <?php */ ?>
-		  
-		  
-		           <?php query_posts(array(
-            	    'post_type'=> 'testimonials',
-	  	    'posts_per_page' => 1,
-	  	    'orderby' => 'post_date',
-	  	    'order' => 'DESC',
-	      	 ));
-           ?>
-		
-		<div class="athletes_bg">
-
-            <div class="content_wrapper">
-        <?php
-
-        	if ( have_posts() ) { $count = 0;
-
-        		while ( have_posts() ) : the_post(); $count++;
-
-        ?>
-			<div class="testemonials">
-	        <h1><img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/user.png">&nbsp; <?php the_title();?></h1>
-            <?php the_content();?>
-			<div class="testemonials_button"><a href="<?php echo $siteUrl?>/coaching/fascat-athletes/">SEE MORE TESTIMONIALS &nbsp;&nbsp;<img src="<?php echo $siteUrl?>/wp-content/uploads/2014/04/left_arrow_02.png"/></a></div>
-
-			</div>
-			
-	            	<?php endwhile;?>
-          <?php } ?>  
-			<div class="clear"> </div>
-			</div>
-			</div>
-			
-			
-	<?php woo_main_after(); ?>
+		<?php include(locate_template('includes/testimonials.php')); ?>
 
     </div><!-- #content -->
 

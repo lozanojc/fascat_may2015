@@ -43,11 +43,11 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
              </div>
 	   </div>        
 
-    	<section class="fullwidth content_wrapper">
-            <ul id="submenu">
+    	<section class="fullwidth entry">
+           <ul id="submenu">
               <li class="active"><a href="<?php echo($siteUrl = site_url());?>/about/">Overview</a></li>
-              <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li>
-              <li><a href="<?php echo $siteUrl?>/about/careers/">Careers</a></li>
+          <!--     <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li> -->
+              <li><a href="<?php echo $siteUrl?>/careers/">Careers</a></li>
               <li><a href="<?php echo $siteUrl?>/contact-us/">Contact</a></li>
               <li><a href="<?php echo $siteUrl?>/athlete-handbook/">New Athlete Handbook</a></li>
               <li><a href="<?php echo $siteUrl?>/core-value/">Core Coaching Values</a></li>
@@ -55,7 +55,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
         <div class="clear"></div>
                 <article <?php post_class(); ?>>
 
-                    <section class="entry">
+                    <section>
 	                	<?php the_content(); ?>
 	             </section><!-- /.entry -->
 
@@ -77,7 +77,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
         
               <?php } ?> 
 
- <h2 class="big_heading">Coach Bios</h2>
+ <h2 class="big_heading coaches">Coach Bios</h2>
         
 	   	  <?php $args = array(
 			'post_type'=>'coach',
@@ -108,6 +108,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
 			<div class="coach_content condense">
 				<h5><?php the_title(); ?></h5>
+        <span class="title-coach"><?php echo $cfs->get('custom_header_text'); ?></span>
 	                	   <?php the_content(); ?>
 			</div>	<!-- /.coach_content ends -->
 

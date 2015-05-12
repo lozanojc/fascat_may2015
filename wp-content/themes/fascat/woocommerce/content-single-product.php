@@ -24,8 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<?php
 			woocommerce_template_single_price();
 			woocommerce_get_sidebar();
-		?>
-		
+		?>		
 	</div>
 
 	<?php

@@ -30,7 +30,7 @@ get_header();
           <header>
             <div class="custom_page_header page_headers" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
                 <div class="header_txt">
-                 <h1><?php echo $cfs->get('custom_header_heading'); ?></h1>
+                 <h2><?php the_title(); ?></h2>
                  <p><?php echo $cfs->get('custom_header_text'); ?></p>
                 </div>
             </div>      

@@ -44,10 +44,10 @@ get_header(); ?>
 	<div class="header_txt"><?php echo $cfs->get('map_text'); ?></div>
 
 
-	<section class="fullwidth content_wrapper">
+	<section class="fullwidth entry">
            <ul id="submenu">
               <li><a href="<?php echo($siteUrl = site_url());?>/about/">Overview</a></li>
-              <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li>
+          <!--     <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li> -->
               <li><a href="<?php echo $siteUrl?>/careers/">Careers</a></li>
               <li class="active"><a href="<?php echo $siteUrl?>/contact-us/">Contact</a></li>
               <li><a href="<?php echo $siteUrl?>/athlete-handbook/">New Athlete Handbook</a></li>
@@ -62,7 +62,7 @@ get_header(); ?>
                 <?php if ( have_posts() ) { ?>
                 <?php while ( have_posts() ) { the_post(); ?>
 
-                        <section class="entry">
+                        <section>
 	                        <?php the_content(); ?>
                         </section>
 

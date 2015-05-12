@@ -1,6 +1,6 @@
-<?php
+ <?php
 // File Security Check
-if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
+if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
     die ( 'You do not have sufficient permissions to access this page!' );
 }
 /**
@@ -13,43 +13,38 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
  * @package WooFramework
  * @subpackage Template
  */
-	get_header();
-	global $woo_options;
+  get_header();
+  global $woo_options;
 ?>
 
     <div id="content" class="col-full">
 
-        <?php woo_main_before(); ?>
-        
         <?php
+        woo_main_before();
+          if ( have_posts() ) { $count = 0;
 
-        	if ( have_posts() ) { $count = 0;
-
-        		while ( have_posts() ) the_post(); $count++;
-
+            while ( have_posts() ) : the_post(); $count++;
+//var_dump(get_post_meta(get_the_ID()));echo"<br/>\nPost Type: ";global $post;var_dump($post->post_type);
         ?>
 
-		<article <?php post_class(); ?>>
+    <article <?php post_class();?>>
 
-	   <header>
-        <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
-          <div class="header_txt">
-            <h2><?php the_title();?></h2>
-		          <p><?php echo $cfs->get('camp_subtitle'); ?></p>
-	             <a class="button small_txt" href="<?php echo $cfs->get('sign_up_url');?>">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
-	      </div>
-			 </div>
-	   </header>
-
-	                
-    			<section class="content_wrapper">
-            <section class="entry fix">
-        <?php global $post;?>
+             <header>
+            <div class="custom_page_header" style="background: url(<?php echo $cfs->get('header_image'); ?>) no-repeat top center;">
+              <div class="header_txt">
+                <h2><?php the_title();?></h2>
+                  <p><?php echo $cfs->get('camp_subtitle'); ?></p>
+                   <a class="button small_txt camps-sign-up" href="#">Sign Up <img class="right_arrow" src="<?php echo get_template_directory_uri() ?>/images/right_arrow.png" alt="right arrow icon" /></a>
+                   <?php the_content();?>
+               </div>
+           </div>
+       </header>
+         
+        <section class="content_wrapper">
+                  <section class="entry fix">
             <ul id="submenu">
-
-
-                      <?php 
-                      $temp = get_the_ID();
+                  <?php 
+                  $temp = get_the_ID();
 
                   query_posts(array(
                   'post_type'=> 'camps',
@@ -59,8 +54,8 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
                    ));
                   ?>
                    <?php if (have_posts()) : while (have_posts()) : the_post(); 
-              $i++; //add 1 to the total count
-              $class = ( $temp == get_the_ID() ) ? 'active' : '';
+                      $i++; //add 1 to the total count
+                      $class = ( $temp == get_the_ID() ) ? 'active' : '';
                    ?>
 
                     <li class= "<?php echo $class ?>">
@@ -68,61 +63,58 @@ if ( ! function_exists( 'wp' ) && ! empty( $_SERVER['SCRIPT_FILENAME'] ) && base
                         <?php the_title(); ?>
                       </a>
                     </li>
-                    
-                      <?php endwhile;?>
-            <?php endif; wp_reset_query();?>
+                  <?php endwhile;?>
+                    <?php endif; wp_reset_query();?>
 
-          </ul>
-        <div class="clear"></div>
-        <section>
-	         <?php the_content(); ?>                    
-			   </section>
+                  </ul>
 
-		<div class="clearfix"> </div>
-    </section>
+                    <?php echo $cfs->get('short_code_stripe'); ?>    
 
-			</section><!-- .content_wrapper -->
-            </article><!-- .post -->
+                <div class="clear"> </div>                   
+             </section>
+          </section><!-- .content_wrapper -->
+        </article><!-- .post -->
+                  
+              <?php endwhile;?>
+          <?php } ?>  
 
-       	<?php } ?>  
         
-        <div class="dots_bg camps_listing">
-	     <?php query_posts(array(
-            	    'post_type'=> 'camps',
-	  	    'posts_per_page' => 4,
-	  	    'orderby' => 'post_date',
+        
+      <div class="dots_bg camps_listing">
+       <?php query_posts(array(
+          'post_type'=> 'camps',
+          'posts_per_page' => 4,
+          'orderby' => 'post_date',
             'post__not_in' => array($post->ID),
-	  	    'order' => 'DESC',
-	      	  ));
-            ?>
+          'order' => 'DESC',
+            ));
+      ?>
                
-            <div class="content_wrapper">
-              <section class="entry fix">
-		<h2>Camps</h2>
-
+        <div class="content_wrapper">
+          <section class="entry fix">
+            <h2>Camps</h2>
            <?php if (have_posts()) : while (have_posts()) : the_post(); 
-	   	  $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-		  $i++; //add 1 to the total count
-           ?>
-
+              $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+            $i++; //add 1 to the total count
+            ?>
               <div class="featured_image">
                 <a href="<?php the_permalink(); ?>">
                   <?php the_post_thumbnail(); ?>
                   <h5><?php the_title();?></h5>
                 </a>
-              </div>	<!-- featured_image ends -->
+              </div>  <!-- featured_image ends -->
             
-            	<?php endwhile;?>
-		<?php endif; ?>
+              <?php endwhile;?>
+            <?php endif; ?>
 
-		<div class="clearfix"> </div>
-  </section>
+          <div class="clearfix"> </div>
+        </section>
 
-	     </div>	<!-- .content_wrapper ends -->
+       </div> <!-- .content_wrapper ends -->
 
-        </div>  <!-- camps_listing ends -->
+      </div>
 
-	<?php woo_main_after(); ?>
+  <?php //woo_main_after(); ?>
 
     </div><!-- #content -->
 

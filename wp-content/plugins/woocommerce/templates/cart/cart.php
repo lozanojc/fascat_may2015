@@ -135,10 +135,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 	</tbody>
 </table>
 
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
-
-</form>
-
 <div class="cart-collaterals">
 
 	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
@@ -146,5 +142,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<?php woocommerce_cart_totals(); ?>
 
 </div>
+
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+</form>
+
+
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

@@ -43,10 +43,10 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
              </div>
 	   </div>        
 
-    	<section class="fullwidth content_wrapper">
-            <ul id="submenu">
+    	<section class="fullwidth entry">
+           <ul id="submenu">
               <li><a href="<?php echo($siteUrl = site_url());?>/about/">Overview</a></li>
-              <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li>
+          <!--     <li><a href="<?php echo $siteUrl?>/about/partners/">Partners</a></li> -->
               <li><a href="<?php echo $siteUrl?>/careers/">Careers</a></li>
               <li><a href="<?php echo $siteUrl?>/contact-us/">Contact</a></li>
               <li><a href="<?php echo $siteUrl?>/athlete-handbook/">New Athlete Handbook</a></li>
@@ -55,7 +55,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
         <div class="clear"></div>
                 <article <?php post_class(); ?>>
 
-                    <section class="entry">
+                    <section>
 	                	<?php the_content(); ?>
 	             </section><!-- /.entry -->
 

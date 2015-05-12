@@ -44,16 +44,17 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
              </div>
 	   </div>        
 
-    	<section class="fullwidth content_wrapper">
+    	<section class="fullwidth entry">
             <ul id="submenu">
               <li class="active"><a href="<?php echo get_site_url(); ?>/services/physiological-testing/">Physiological Testing</a></li>
               <li><a href="<?php echo get_site_url(); ?>/services/bicycle-fitting/">Bicycle Fitting</li>
+              <li><a href="<?php echo get_site_url(); ?>/services/mlss/">Maximal Lactate Steady State Testing</a></li>
             </ul>
         <div class="clear"></div>
 
                 <article <?php post_class(); ?>>
 
-                    <section class="entry">
+                    <section>
 	                	<?php the_content(); ?>
 	                </section><!-- /.entry -->
 
