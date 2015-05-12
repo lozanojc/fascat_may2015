@@ -128,14 +128,14 @@ wc_print_notices();
 
 						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
 
-						<?php do_action('woocommerce_cart_coupon'); ?>
+						
 
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" /> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e( 'Checkout &rarr;', 'woocommerce' ); ?>" />
+				
 
-				<?php do_action('woocommerce_proceed_to_checkout'); ?>
+				
 
 				<?php //$woocommerce->nonce_field('cart')
 				wp_nonce_field('cart'); ?>

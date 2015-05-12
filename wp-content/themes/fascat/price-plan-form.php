@@ -31,12 +31,12 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 							</div>
 						</header>  
 
-						    <div class="content_wrapper">  
+						    <section class="entry">  
 								<section class="form-container">
 
 					                <article <?php post_class(); ?>>
 
-					                    <section class="entry">
+					                    <section>
 					                    	<?php echo $cfs->get('sidebar_form_content');?>
 
 						                	
@@ -56,7 +56,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 		               			<section class="sidebar-content">
 		               				<?php the_content(); ?>
 		               			</section>
-					         </div>
+					         </section>
 
 					<?php } elseif(is_page(1390)) { ?> <!--CHASE-->
 
@@ -69,12 +69,12 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 								</div>
 							</div>
 						</header>  
-						<div class="content_wrapper">  
+						<section class="entry">  
 								<section class="form-container">
 
 				                <article <?php post_class(); ?>>
 
-				                    <section class="entry">
+				                    <section>
 				                    	<?php echo $cfs->get('sidebar_form_content');?>
 					                	
 
@@ -92,7 +92,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 									<?php the_content(); ?>
 		               			</section>
 
-				        </div>
+				        </entry>
 
 				        <?php } elseif(is_page(1396)) { ?> <!--Physiology Questionnaire-->
 
@@ -105,16 +105,16 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 								</div>
 							</div>
 						</header>  
-						<div class="content_wrapper">  
+						<section class="entry">  
 								<section class="form-container">
 
 				                <article <?php post_class(); ?>>
 
-				                    <section class="entry">
+				                    <section>
 
 					                	<?php echo $cfs->get('sidebar_form_content');?>
 
-					             </section><!-- /.entry -->
+					             	</section><!-- /.entry -->
 
 
 
@@ -128,7 +128,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 									<?php the_content(); ?>
 		               			</section>
 
-				        </div>
+				        </section>
 
 
 				
@@ -143,12 +143,12 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 										</div>
 									</div>
 								</header>  
-								<div class="content_wrapper">  
+								<section class="entry">  
 										<section class="form-container">
 
 							                <article <?php post_class(); ?>>
 
-							                    <section class="entry">
+							                    <section>
 
 								                	<?php echo $cfs->get('sidebar_form_content');?>
 
@@ -166,7 +166,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 											<?php the_content(); ?>
 		               					</section>
 
-				       			 </div>
+				       			 </section>
 
 								<?php }?>
 								<?php

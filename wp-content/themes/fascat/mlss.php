@@ -13,7 +13,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 <?php
 
 /**
- * Template Name: Physiological Testing
+ * Template Name: MLSS
  *
  * This template is a About template file showing its content and Coaches.
  *
@@ -46,9 +46,9 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
     	<section class="fullwidth entry">
             <ul id="submenu">
-              <li class="active"><a href="<?php echo get_site_url(); ?>/services/physiological-testing/">Physiological Testing</a></li>
+              <li><a href="<?php echo get_site_url(); ?>/services/physiological-testing/">Physiological Testing</a></li>
               <li><a href="<?php echo get_site_url(); ?>/services/bicycle-fitting/">Bicycle Fitting</li>
-              <li><a href="<?php echo get_site_url(); ?>/services/mlss/">Maximal Lactate Steady State Testing</a></li>
+              <li class="active"><a href="<?php echo get_site_url(); ?>/services/mlss/">Maximal Lactate Steady State Testing</a></li>
             </ul>
         <div class="clear"></div>
 

@@ -34,7 +34,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 								</div>
 							</div>
 						</header>  
-						<div class="content_wrapper">  
+						<section class="entry">  
 								<section class="form-container">
 
 					                <article <?php post_class(); ?>>

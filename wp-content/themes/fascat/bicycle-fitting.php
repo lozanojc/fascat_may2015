@@ -67,6 +67,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
             <ul id="submenu">
               <li><a href="<?php echo get_site_url(); ?>/services/physiological-testing/">Physiological Testing</a></li>
               <li class="active"><a href="<?php echo get_site_url(); ?>/services/bicycle-fitting/">Bicycle Fitting</li>
+              <li><a href="<?php echo get_site_url(); ?>/services/mlss/">Maximal Lactate Steady State Testing</a></li>
             </ul>
        		 <div class="clear"></div>                                                   
                 <article <?php post_class(); ?>>
